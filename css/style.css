@@ -1,0 +1,21 @@
+body {
+    background-color: #F1EEE4;
+    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+}
+
+footer, .header {
+    background-color: #7F7A6D;
+}
+
+main {
+    color: #846C3D;
+}
+
+h2, h3 {
+    background-color: #7F7A6D;
+    color: white;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.2);
+}
