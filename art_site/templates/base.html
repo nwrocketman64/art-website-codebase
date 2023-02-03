@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block main-title %}{{ title }} - Evan Whipple Fine Art{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "main_site/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "main_site/css/style.css" %}">
+    <script src="{% static "main_site/js/bootstrap.bundle.min.js" %}"></script>
+    {% block addons %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg header">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a class="text-decoration-none text-white" href="{% url "index-page" %}">
+                    <span class="h4">Evan Whipple Fine Art</span>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon text-black"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
+            <ul class="navbar-nav navbar-right me-auto mb-2 mb-lg-0 px-3">
+                <li class="nav-item"><a class="{% if '/home' in path %}active{% endif %} nav-link" href="{% url "index-page" %}">Home</a></li>
+                <li class="nav-item"><a class="{% if '/works' in path %}active{% endif %} nav-link" href="#">Works</a></li>
+                <li class="nav-item"><a class="{% if '/contact' in path %}active{% endif %} nav-link" href="{% url "contact-page" %}">Contact</a></li>
+                <li class="nav-item"><a class="{% if '/about' in path %}active{% endif %} nav-link" href="{% url "about-page" %}">About</a></li>
+                <li class="nav-item"><a class="{% if '/newsletter' in path %}active{% endif %} nav-link" href="#">Newsletter</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="p-4 container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="text-center">
+        <p class="align-middle text-white p-3 m-0">&copy;2023 | Evan Whipple Fine Art</p>
+    </footer>
+    {% block addLoad %}{% endblock %}
+</body>
+</html>

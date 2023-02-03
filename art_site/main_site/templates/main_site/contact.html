@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block addons %}
+    <meta name="description" content="">
+    <meta name="author" content="">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="text-center">Contact the Artist</h1>
+    </section>
+    <section class="py-4 px-3 mt-3">
+        <form action="/contact" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-check">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+            {% endfor %}
+            <div class="px-2 m-3"><button type="submit" class="btn btn-primary">Send Form</button></div>
+        </form>
+    </section>
+{% endblock %}

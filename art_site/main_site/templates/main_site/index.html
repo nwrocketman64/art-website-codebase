@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block addons %}
+    <meta name="description" content="">
+    <meta name="author" content="">
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <section class="col-lg-8">
+            <h1 class="text-center p-3">Featured Painting</h1>
+            <img src="{% static "main_site/img/test.jpg" %}" alt="test" style="width: 100%;">
+            <p class="py-3">
+                This oil painting on canvas and framed is 55" x 44". It
+                was painted to reflect a morning sunrise and Liberty's
+                awakening of each new day.
+            </p>
+        </section>
+        <section class="col-lg-4">
+            <aside>
+                <h2 class="text-center p-2 my-3">Recent Works</h2>
+                <img src="{% static "main_site/img/test2.jpg" %}" alt="test 2" style="width: 100%;">
+                <h2 class="text-center p-2 my-3">Latest Blog Post</h2>
+                <ul>
+                    <li>New!</li>
+                    <li>Prayer</li>
+                    <li>New entries!</li>
+                    <li>The Grand Canyon</li>
+                </ul>
+            </aside>
+        </section>
+    </div>
+{% endblock %}
