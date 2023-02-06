@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView
 
 # Import the needed classes from other files.
 from .forms import RequestForm
-from .models import Request
+from .models import Request, Work
 
 # Create your views here.
 
@@ -62,6 +62,26 @@ class ContactSubmitPage(TemplateView):
         return context
 
 
+class WorkList(ListView):
+    """ Work List
+    The class delivers the full list of works page.
+    """
+    # Set the template, model, and order by date.
+    template_name = "main_site/works.html"
+    model = Work
+    ordering = ["-date"]
+    context_object_name = "works"
+    paginate_by = 6
+
+
+    # Add the title and path to the page.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Full List of Works of Art"
+        context["path"] = "/works"
+        return context
+
+
 class AboutPage(TemplateView):
     """About Page
     The class delivers the about me page.
@@ -73,6 +93,6 @@ class AboutPage(TemplateView):
     # Add the title and path to the page.
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "About Me"
+        context["title"] = "About the Artist"
         context["path"] = "/about"
         return context

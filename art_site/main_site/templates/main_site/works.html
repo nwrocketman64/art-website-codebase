@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block addons %}
+    <meta name="description" content="">
+    <meta name="author" content="">
+{% endblock %}
+
+{% block content %}
+<section>
+    <h1 class="text-center">{{ title }}</h1>
+    {% if works|length %}
+    <div id="works-list">
+        {% for work in works %}
+        <div class="work-item card">
+            <img class="card-img-top" src="{{ work.image.url }}" alt="{{ work.title }}">
+            <div>
+                <h5 class="card-title text-center pt-3">{{ work.title }}</h5>
+                <div class="text-center p-2"><a class="btn btn-primary" href="#">Details</a></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <ul class="pagination justify-content-center pt-5">
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&lt;</a></li>
+        {% endif %}
+        <li class="page-item page-link">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</li>
+        {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&gt;</a></li>
+        {% endif %}
+    </ul>
+    {% else %}
+    <p class="text-center">There are no works of art, yet.</p>
+    {% endif %}
+</section>
+{% endblock %}

@@ -23,3 +23,26 @@ textarea {
 .carousel-control-prev, .carousel-control-next {
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+#works-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.work-item {
+    box-shadow: 0 8px 14px rgba(0,0,0,0.26);
+}
+
+@media only screen and (min-width: 37em) {
+    #works-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+    #works-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-right me-auto mb-2 mb-lg-0 px-3">
                 <li class="nav-item"><a class="{% if '/home' in path %}active{% endif %} nav-link" href="{% url "index-page" %}">Home</a></li>
-                <li class="nav-item"><a class="{% if '/works' in path %}active{% endif %} nav-link" href="#">Works</a></li>
+                <li class="nav-item"><a class="{% if '/works' in path %}active{% endif %} nav-link" href="{% url "work-list" %}">Works</a></li>
                 <li class="nav-item"><a class="{% if '/contact' in path %}active{% endif %} nav-link" href="{% url "contact-page" %}">Contact</a></li>
                 <li class="nav-item"><a class="{% if '/about' in path %}active{% endif %} nav-link" href="{% url "about-page" %}">About</a></li>
                 <li class="nav-item"><a class="{% if '/newsletter' in path %}active{% endif %} nav-link" href="#">Newsletter</a></li>
