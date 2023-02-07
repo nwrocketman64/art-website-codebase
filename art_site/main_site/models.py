@@ -12,6 +12,7 @@ class Work(models.Model):
     """
     title = models.CharField(max_length=50)
     description = models.TextField()
+    medium = models.CharField(max_length=50)
     lenght = models.PositiveIntegerField()
     height = models.PositiveIntegerField()
     width = models.PositiveIntegerField()

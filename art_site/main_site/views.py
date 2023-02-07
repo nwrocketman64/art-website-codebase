@@ -82,6 +82,23 @@ class WorkList(ListView):
         return context
 
 
+class WorkDetails(DetailView):
+    """ Work Details
+    The class returns the details of each work of art.
+    """
+    # Set the template and the model.
+    template_name = "main_site/work-detail.html"
+    model = Work
+
+
+    # Add the title and path to the page.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Work Details"
+        context["path"] = "/works"
+        return context
+
+
 class AboutPage(TemplateView):
     """About Page
     The class delivers the about me page.

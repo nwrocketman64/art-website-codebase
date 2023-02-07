@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block addons %}
+    <meta name="description" content="">
+    <meta name="author" content="">
+{% endblock %}
+
+{% block content %}
+<section>
+    <p class="text-black-50">Last Updated: <time datetime="{{ work.date|date:'Y-m-d H:i' }}">{{ work.date }}</time></p>
+    <img class="img-fluid" src="{{ work.image.url }}" alt="{{ work.title|title }}">
+    <h1 class="text-center mt-3">{{ work.title|title }}</h1>
+    <p><span class="fw-bold">Medium: </span>{{ work.medium }}</p>
+    <p><span class="fw-bold">Size: </span>{{ work.lenght }} x {{ work.height }} x {{ work.width }}</p>
+    {{ work.description|linebreaks }}
+</section>
+{% endblock %}

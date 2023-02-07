@@ -17,7 +17,7 @@
             <img class="card-img-top" src="{{ work.image.url }}" alt="{{ work.title }}">
             <div>
                 <h5 class="card-title text-center pt-3">{{ work.title }}</h5>
-                <div class="text-center p-2"><a class="btn btn-primary" href="#">Details</a></div>
+                <div class="text-center p-2"><a class="btn btn-primary" href="{% url "work-details" work.slug %}">Details</a></div>
             </div>
         </div>
         {% endfor %}
